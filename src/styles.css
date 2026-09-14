@@ -1,0 +1,123 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Newsreader", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --font-sans: "Newsreader", "Iowan Old Style", Palatino, Georgia, serif;
+  --font-mono: ui-monospace, "SF Mono", "Cascadia Mono", "Segoe UI Mono", Menlo, Consolas, monospace;
+
+  --color-bg: #f3efe6;
+  --color-bg-sunken: #ebe6da;
+  --color-surface: #fbfaf6;
+  --color-surface-2: #f4f0e8;
+  --color-ink: #1a1814;
+  --color-ink-soft: #3f3a34;
+  --color-muted: #6b645c;
+  --color-faint: #8a8278;
+  --color-line: #ddd6c8;
+  --color-line-strong: #c9c0b0;
+  --color-accent: #245568;
+  --color-accent-2: #1c4454;
+  --color-accent-soft: #dce7eb;
+  --color-ok: #2f5d3a;
+  --color-ok-soft: #e4eee6;
+  --color-warn: #8a4b12;
+  --color-warn-soft: #f4e6d4;
+  --color-danger: #8f2d2d;
+  --color-danger-soft: #f3e0dc;
+  --color-tape: #2a241c;
+
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 28px;
+
+  --shadow-border: 0 0 0 1px rgba(26, 24, 20, 0.06), 0 1px 2px -1px rgba(26, 24, 20, 0.06),
+    0 2px 8px 0 rgba(26, 24, 20, 0.04);
+  --shadow-border-hover: 0 0 0 1px rgba(26, 24, 20, 0.1), 0 8px 24px -12px rgba(26, 24, 20, 0.18);
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: var(--color-bg);
+    color: var(--color-ink);
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background: var(--color-bg);
+    color: var(--color-ink);
+    line-height: 1.55;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-wrap: balance;
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    background: var(--color-accent-soft);
+    color: var(--color-accent-2);
+  }
+
+  code,
+  kbd,
+  pre,
+  .mono {
+    font-family: var(--font-mono);
+    font-variant-ligatures: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.print-only {
+  display: none;
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  html,
+  body {
+    background: white;
+    color: black;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .break-after-page {
+    break-after: page;
+  }
+}
