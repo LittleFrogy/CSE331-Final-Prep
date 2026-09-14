@@ -8,3 +8,5 @@ artifacts/
 attachments/
 screenshots/
 .env*
+
+.vercel

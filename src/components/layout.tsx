@@ -10,6 +10,7 @@ const NAV = [
   { to: "/exam", label: "Exam bank" },
   { to: "/cheatsheet", label: "Cheatsheet" },
   { to: "/quiz", label: "Drill" },
+  { to: "/resources", label: "Resources" },
 ];
 
 export function Shell({ children }: { children: React.ReactNode }) {
